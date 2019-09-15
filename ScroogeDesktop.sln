@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScroogeDesktop", "ScroogeDesktop\ScroogeDesktop.csproj", "{625CCF7F-63FB-4126-B4DB-3EE489ABED75}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotnetRPC", "DotnetRPC\DotnetRPC.csproj", "{2EC26077-7F90-460C-B783-04CB8E8159F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{625CCF7F-63FB-4126-B4DB-3EE489ABED75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{625CCF7F-63FB-4126-B4DB-3EE489ABED75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{625CCF7F-63FB-4126-B4DB-3EE489ABED75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EC26077-7F90-460C-B783-04CB8E8159F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EC26077-7F90-460C-B783-04CB8E8159F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EC26077-7F90-460C-B783-04CB8E8159F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EC26077-7F90-460C-B783-04CB8E8159F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
