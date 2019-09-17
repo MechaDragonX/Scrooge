@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
+using System.Windows.Forms;
 using DotnetRPC;
 
-namespace ScroogeDesktop
+namespace Scrooge
 {
     public class RPC
     {
@@ -24,13 +25,16 @@ namespace ScroogeDesktop
         public static int MaxPartySize { get; set; }
         public static string PartyID { get; set; }
 
+        public RPC (string id)
+        {
+            ID = id;
+        }
         public RPC
             (
                 string id, string details, string state, DateTimeOffset startUnix, DateTimeOffset endUnix,
                 string largeImage, string largeImageText, string smallImage, string smallImageText
-            )
+            ) : this(id)
         {
-            ID = id;
             Details = details;
             State = state;
             StartUnix = startUnix;
@@ -57,19 +61,25 @@ namespace ScroogeDesktop
             PartyID = partyId;
         }
 
-        public static async Task StartAsync(bool admin)
+        public async Task StartAsync(bool admin)
         {
             var client = new RpcClient(ID, admin, Assembly.GetExecutingAssembly().Location);
             client.ConnectionClosed += _ =>
             {
-                Console.WriteLine("Disconnected!");
+                // Console.WriteLine("Disconnected!");
+                MessageBox.Show("Disconnected!");
                 return Task.CompletedTask;
             };
             client.ClientErrored += args =>
             {
-                Console.WriteLine($"Client error: {args.Exception}");
+                // Console.WriteLine($"Client error: {args.Exception}");
+                MessageBox.Show($"Client error: {args.Exception}");
                 return Task.CompletedTask;
             };
+        }
+        public async Task SetActivityAsync(bool admin)
+        {
+            var client = new RpcClient(ID, admin, Assembly.GetExecutingAssembly().Location);
             client.Ready += async args =>
             {
                 // Only start on ready
@@ -78,7 +88,7 @@ namespace ScroogeDesktop
                     x.Details = Details;
                     x.State = State;
                     x.StartUnix = StartUnix;
-                    x.EndUnix = DateTimeOffset.Now.AddHours(24);
+                    x.EndUnix = EndUnix;
 
                     x.LargeImage = LargeImage;
                     x.LargeImageText = LargeImageText;
