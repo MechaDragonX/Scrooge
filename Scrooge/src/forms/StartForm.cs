@@ -5,19 +5,21 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Scrooge
 {
-    public partial class MainForm : Form
+    public partial class StartForm : Form
     {
-        public MainForm()
+        public StartForm()
         {
             InitializeComponent();
-            StartForm start = new StartForm();
-            start.ShowDialog();
+            button1.Click += (s, e) =>
+            {
+                Program.StartClient(textBox1.Text);
+                this.Close();
+            };
         }
     }
 }

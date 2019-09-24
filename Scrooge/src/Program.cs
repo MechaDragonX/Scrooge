@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
 using System.Security.Principal;
+using DiscordRPC;
 
 namespace Scrooge
 {
@@ -18,7 +19,15 @@ namespace Scrooge
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new StartForm());
+            Application.Run(new MainForm());
+        }
+        public static void StartClient(string id)
+        {
+            DiscordRpcClient Client = new DiscordRpcClient(id);
+            MessageBox.Show("Ping");
+            Client.Initialize();
+            if(Client.IsInitialized)
+                MessageBox.Show("Pong") ;
         }
     }
 }
