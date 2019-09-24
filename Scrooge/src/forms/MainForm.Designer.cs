@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.details = new System.Windows.Forms.TextBox();
+            this.state = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.lik = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.lit = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.sik = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.sit = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -60,19 +60,19 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "State";
             // 
-            // textBox1
+            // details
             // 
-            this.textBox1.Location = new System.Drawing.Point(245, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(246, 31);
-            this.textBox1.TabIndex = 1;
+            this.details.Location = new System.Drawing.Point(245, 45);
+            this.details.Name = "textBox1";
+            this.details.Size = new System.Drawing.Size(246, 31);
+            this.details.TabIndex = 1;
             // 
-            // textBox2
+            // state
             // 
-            this.textBox2.Location = new System.Drawing.Point(245, 102);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(246, 31);
-            this.textBox2.TabIndex = 3;
+            this.state.Location = new System.Drawing.Point(245, 102);
+            this.state.Name = "textBox2";
+            this.state.Size = new System.Drawing.Size(246, 31);
+            this.state.TabIndex = 3;
             // 
             // label2
             // 
@@ -83,12 +83,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Details";
             // 
-            // textBox3
+            // lik
             // 
-            this.textBox3.Location = new System.Drawing.Point(245, 168);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(246, 31);
-            this.textBox3.TabIndex = 5;
+            this.lik.Location = new System.Drawing.Point(245, 168);
+            this.lik.Name = "textBox3";
+            this.lik.Size = new System.Drawing.Size(246, 31);
+            this.lik.TabIndex = 5;
             // 
             // label3
             // 
@@ -99,12 +99,12 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Large Image Key";
             // 
-            // textBox4
+            // lit
             // 
-            this.textBox4.Location = new System.Drawing.Point(245, 226);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(246, 31);
-            this.textBox4.TabIndex = 7;
+            this.lit.Location = new System.Drawing.Point(245, 226);
+            this.lit.Name = "textBox4";
+            this.lit.Size = new System.Drawing.Size(246, 31);
+            this.lit.TabIndex = 7;
             // 
             // label4
             // 
@@ -115,12 +115,12 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Large Image Text";
             // 
-            // textBox5
+            // sik
             // 
-            this.textBox5.Location = new System.Drawing.Point(245, 283);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(246, 31);
-            this.textBox5.TabIndex = 11;
+            this.sik.Location = new System.Drawing.Point(245, 283);
+            this.sik.Name = "textBox5";
+            this.sik.Size = new System.Drawing.Size(246, 31);
+            this.sik.TabIndex = 11;
             // 
             // label5
             // 
@@ -131,12 +131,12 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Small Image Key";
             // 
-            // textBox6
+            // sit
             // 
-            this.textBox6.Location = new System.Drawing.Point(245, 343);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(246, 31);
-            this.textBox6.TabIndex = 9;
+            this.sit.Location = new System.Drawing.Point(245, 343);
+            this.sit.Name = "textBox6";
+            this.sit.Size = new System.Drawing.Size(246, 31);
+            this.sit.TabIndex = 9;
             // 
             // label6
             // 
@@ -216,17 +216,17 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.sik);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.sit);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.lit);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.lik);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.state);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.details);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Scrooge";
@@ -240,16 +240,16 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox details;
+        private System.Windows.Forms.TextBox state;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox lik;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox lit;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox sik;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox sit;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label7;

@@ -20,12 +20,10 @@ namespace Scrooge
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
-        }
-        public static bool StartClient(string id)
-        {
-            DiscordRpcClient Client = new DiscordRpcClient(id);
-            Client.Initialize();
-            return Client.IsInitialized;
+            Application.ApplicationExit += (s, e) =>
+            {
+                Client.End();
+            };
         }
     }
 }

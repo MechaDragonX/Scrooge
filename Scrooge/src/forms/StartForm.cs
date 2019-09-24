@@ -25,7 +25,7 @@ namespace Scrooge
                 }
                 else
                 {
-                    success = Program.StartClient(textBox1.Text);
+                    success = Client.Start(textBox1.Text);
                     if (!success)
                     {
                         MessageBox.Show("Connection Failed!\nPlease try again!");
