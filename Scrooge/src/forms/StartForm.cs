@@ -15,10 +15,27 @@ namespace Scrooge
         public StartForm()
         {
             InitializeComponent();
+            bool success;
             button1.Click += (s, e) =>
             {
-                Program.StartClient(textBox1.Text);
-                this.Close();
+                if (string.IsNullOrWhiteSpace(textBox1.Text))
+                {
+                    MessageBox.Show("Textbox is blank!");
+                    textBox1.Text = "";
+                }
+                else
+                {
+                    success = Program.StartClient(textBox1.Text);
+                    if (!success)
+                    {
+                        MessageBox.Show("Connection Failed!\nPlease try again!");
+                        textBox1.Text = "";
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                }
             };
         }
     }

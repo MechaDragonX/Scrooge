@@ -21,13 +21,11 @@ namespace Scrooge
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
         }
-        public static void StartClient(string id)
+        public static bool StartClient(string id)
         {
             DiscordRpcClient Client = new DiscordRpcClient(id);
-            MessageBox.Show("Ping");
             Client.Initialize();
-            if(Client.IsInitialized)
-                MessageBox.Show("Pong") ;
+            return Client.IsInitialized;
         }
     }
 }
