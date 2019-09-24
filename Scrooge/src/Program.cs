@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
 using System.Security.Principal;
-using DotnetRPC;
 
 namespace Scrooge
 {
@@ -19,7 +18,7 @@ namespace Scrooge
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StartForm());
+            //Application.Run(new StartForm());
         }
     }
 }

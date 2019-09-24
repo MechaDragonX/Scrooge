@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 using System.Windows.Forms;
-using DotnetRPC;
 
 namespace Scrooge
 {
@@ -59,58 +58,6 @@ namespace Scrooge
             CurrentPartySize = currentPartySize;
             MaxPartySize = maxPartySize;
             PartyID = partyId;
-        }
-
-        public async Task StartAsync(bool admin)
-        {
-            var client = new RpcClient(ID, admin, Assembly.GetExecutingAssembly().Location);
-            client.ConnectionClosed += _ =>
-            {
-                // Console.WriteLine("Disconnected!");
-                MessageBox.Show("Disconnected!");
-                return Task.CompletedTask;
-            };
-            client.ClientErrored += args =>
-            {
-                // Console.WriteLine($"Client error: {args.Exception}");
-                MessageBox.Show($"Client error: {args.Exception}");
-                return Task.CompletedTask;
-            };
-        }
-        public async Task SetActivityAsync(bool admin)
-        {
-            var client = new RpcClient(ID, admin, Assembly.GetExecutingAssembly().Location);
-            client.Ready += async args =>
-            {
-                // Only start on ready
-                await client.SetActivityAsync(x =>
-                {
-                    x.Details = Details;
-                    x.State = State;
-                    x.StartUnix = StartUnix;
-                    x.EndUnix = EndUnix;
-
-                    x.LargeImage = LargeImage;
-                    x.LargeImageText = LargeImageText;
-
-                    x.SmallImage = SmallImage;
-                    x.SmallImageText = SmallImageText;
-
-                    if (HasParty)
-                    {
-                        x.CurrentPartySize = CurrentPartySize;
-                        x.MaxPartySize = MaxPartySize;
-                        x.PartyId = PartyID;
-                    }
-                });
-            };
-
-            await client.ConnectAsync();
-
-            await Task.Delay(15000);
-            client.Dispose();
-            Console.WriteLine("It's gone!");
-            Console.ReadKey();
         }
     }
 }
